@@ -138,13 +138,13 @@ def preprocess_data_for_knn(crowd_sourced_data):
             new_tup = ()
             for item in data:
                 if item == 0:
-                    new_tup += (95,)
+                    new_tup += (-95.0,)
                 else:
                     new_tup += (item,)
             new_arr.append(new_tup)
         else:
             new_arr.append(data)
-            
+    
     return new_arr
 
 def build_knn_model(processed_data):
