@@ -206,8 +206,20 @@ def rssi_to_dist(proccessed_live_rssi_data):
     '''
     # TODO: implement the algorithm from the link above
     txPower = -54 # According to the spec of the beacon
+    dist_to_beacons_array = []
+    for i in range(len(proccessed_live_rssi_data)):
+        curr = proccessed_live_rssi_data[i]
+        if curr == 0:
+            dist_to_beacons_array.append(-1.0)
+        else:
+            ratio = curr * 1.0 / txPower
+            if ratio < 1.0:
+                dist_to_beacons_array.append(math.pow(ratio,10))
+            else:
+                dist_to_beacons_array.append((0.89976) * math.pow(ratio,7.7095) + 0.111)
 
     # return dist_to_beacons
+    return dist_to_beacons_array
     raise NotImplementedError
 
 
