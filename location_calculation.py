@@ -167,9 +167,9 @@ def build_knn_model(processed_data):
     '''
 
     # TODO: Refer to the scikit-learn documentation to see how to use KNeighborsRegressor
-    knn_x = KNeighborsRegressor(n_neighbors=5)
-    knn_y = KNeighborsRegressor(n_neighbors=5)
-    knn_z = KNeighborsRegressor(n_neighbors=5)
+    knn_x = KNeighborsRegressor(n_neighbors=10)
+    knn_y = KNeighborsRegressor(n_neighbors=10)
+    knn_z = KNeighborsRegressor(n_neighbors=10)
 
     # TODO: How do you extract the information you need from processed data
     rssi_data = []
