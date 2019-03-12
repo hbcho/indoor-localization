@@ -102,7 +102,7 @@ var RenderType_AppComponent = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵcrt"
 function View_AppComponent_2(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 0, ":svg:circle", [["fill", "None"], ["stroke", "black"], ["stroke-width", "0.8"]], [[1, "cx", 0], [1, "cy", 0], [1, "r", 0]], null, null, null, null))], null, function (_ck, _v) { var _co = _v.component; var currVal_0 = _v.parent.context.$implicit.x; var currVal_1 = _v.parent.context.$implicit.y; var currVal_2 = _co.dataModel.length_to_svg_length(_co.dataModel.dists[_v.parent.context.index]); _ck(_v, 0, 0, currVal_0, currVal_1, currVal_2); }); }
 function View_AppComponent_1(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 2, null, null, null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_AppComponent_2)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](2, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], { ngIf: [0, "ngIf"] }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](0, null, null, 0))], function (_ck, _v) { var _co = _v.component; var currVal_0 = (_co.dataModel.dists[_v.context.index] > 0); _ck(_v, 2, 0, currVal_0); }, null); }
 function View_AppComponent_3(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 0, ":svg:circle", [["fill", "rgb(197, 27, 138)"], ["r", "10"], ["stroke", "black"], ["stroke-width", "2"]], [[1, "cx", 0], [1, "cy", 0]], null, null, null, null))], null, function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.dataModel.groundtruth_svg_coord.x; var currVal_1 = _co.dataModel.groundtruth_svg_coord.y; _ck(_v, 0, 0, currVal_0, currVal_1); }); }
-function View_AppComponent_4(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 0, ":svg:circle", [["fill", "rgb(117, 107, 177)"], ["r", "10"], ["stroke", "black"], ["stroke-width", "2"]], [[1, "cx", 0], [1, "cy", 0]], null, null, null, null))], null, function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.dataModel.fingerprinting_svg_coord.x; var currVal_1 = _co.dataModel.fingerprinting_svg_coord.x; _ck(_v, 0, 0, currVal_0, currVal_1); }); }
+function View_AppComponent_4(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 0, ":svg:circle", [["fill", "rgb(117, 107, 177)"], ["r", "10"], ["stroke", "black"], ["stroke-width", "2"]], [[1, "cx", 0], [1, "cy", 0]], null, null, null, null))], null, function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.dataModel.fingerprinting_svg_coord.x; var currVal_1 = _co.dataModel.fingerprinting_svg_coord.y; _ck(_v, 0, 0, currVal_0, currVal_1); }); }
 function View_AppComponent_5(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 0, ":svg:circle", [["fill", "rgb(49, 163, 84)"], ["r", "10"], ["stroke", "black"], ["stroke-width", "2"]], [[1, "cx", 0], [1, "cy", 0]], null, null, null, null))], null, function (_ck, _v) { var _co = _v.component; var currVal_0 = _co.dataModel.trilateration_svg_coord.x; var currVal_1 = _co.dataModel.trilateration_svg_coord.y; _ck(_v, 0, 0, currVal_0, currVal_1); }); }
 function View_AppComponent_6(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 0, ":svg:circle", [["r", "8"], ["stroke", "black"], ["stroke-dasharray", "4"], ["stroke-width", "1"]], [[1, "cx", 0], [1, "cy", 0], [1, "fill", 0]], null, null, null, null))], null, function (_ck, _v) { var _co = _v.component; var currVal_0 = _v.context.$implicit.x; var currVal_1 = _v.context.$implicit.y; var currVal_2 = _co.dataModel.color_scale[_co.dataModel.rssi_color_index[_v.context.index]]; _ck(_v, 0, 0, currVal_0, currVal_1, currVal_2); }); }
 function View_AppComponent_7(_l) { return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 2, null, null, null, null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](1, 0, null, null, 1, ":svg:text", [["font-weight", "bold"], ["transform", "rotate(-135)"]], [[1, "x", 0], [1, "y", 0], [1, "transform-origin", 0]], null, null, null, null)), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](2, null, ["", ""]))], null, function (_ck, _v) { var currVal_0 = (_v.context.$implicit.x - 5); var currVal_1 = (_v.context.$implicit.y + 5); var currVal_2 = ((_v.context.$implicit.x + " ") + _v.context.$implicit.y); _ck(_v, 1, 0, currVal_0, currVal_1, currVal_2); var currVal_3 = _v.context.index; _ck(_v, 2, 0, currVal_3); }); }
@@ -273,7 +273,9 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.start_collecting = function () {
         this.dataModel.collecting_data = true;
         this.dataModel.disable_svg_click = true;
-        this.dataModel.rssi_history.length = 0;
+        while (this.dataModel.rssi_history.length > 0) {
+            this.dataModel.rssi_history.pop();
+        }
         this.dataModel.download_ground_truth.x = this.dataModel.groundtruth.x;
         this.dataModel.download_ground_truth.y = this.dataModel.groundtruth.y;
         this.dataModel.download_ground_truth.z = this.dataModel.groundtruth.z;
@@ -281,24 +283,41 @@ var AppComponent = /** @class */ (function () {
     AppComponent.prototype.cancel_collecting = function () {
         this.dataModel.collecting_data = false;
         this.dataModel.disable_svg_click = false;
-        this.dataModel.rssi_history.length = 0;
-        this.dataModel.download_rssi_history_buffer.length = 0;
+        while (this.dataModel.rssi_history.length > 0) {
+            this.dataModel.rssi_history.pop();
+        }
+        while (this.dataModel.download_rssi_history_buffer.length > 0) {
+            this.dataModel.download_rssi_history_buffer.pop();
+        }
     };
     AppComponent.prototype.change_scan_interval = function (event) {
         this.ble.change_scan_interval(event);
     };
     AppComponent.prototype.download_collected_data = function () {
         var _this = this;
+        // console.log('!!!!!!!!!!!!!!!!test test test download!!!!!')
         var str_to_write = 'id, rssi0, rssi1, rssi2, rssi3, rssi4, rssi5, rssi6, rssi7, location_x, location_y, location_z\n';
         var id = this.dataModel.id + new Date().valueOf();
         var file_name = id + '_rssi_data.csv';
         str_to_write += this.dataModel.download_rssi_history_buffer.map(function (d) { return id + ", " + d[0] + ", " + d[1] + ", " + d[2] + ", " + d[3] + ", " + d[4] + ", " + d[5] + ", " + d[6] + ", " + d[7] + ", " + _this.dataModel.download_ground_truth.x + ", " + _this.dataModel.download_ground_truth.y + ", " + _this.dataModel.download_ground_truth.z; }).join('\n');
+        this.dataModel.collecting_data = false;
+        this.dataModel.disable_svg_click = false;
+        while (this.dataModel.rssi_history.length > 0) {
+            this.dataModel.rssi_history.pop();
+        }
+        while (this.dataModel.download_rssi_history_buffer.length > 0) {
+            this.dataModel.download_rssi_history_buffer.pop();
+        }
+        // console.log('entry deleted')
+        // console.log(this.dataModel.download_rssi_history_buffer)
         file_saver__WEBPACK_IMPORTED_MODULE_4__["saveAs"](new Blob([str_to_write]), file_name);
     };
     AppComponent.prototype.uploadFile = function (event) {
         var _this = this;
         console.log(event);
-        this.dataModel.play_data.length = 0;
+        while (this.dataModel.play_data.length > 0) {
+            this.dataModel.play_data.pop();
+        }
         this.dataModel.current_play_index = 0;
         this.dataModel.is_data_replay = false;
         var fileReader = new FileReader();
@@ -317,7 +336,9 @@ var AppComponent = /** @class */ (function () {
     };
     AppComponent.prototype.stop_playing = function () {
         this.dataModel.current_play_index = 0;
-        this.dataModel.play_data.length = 0;
+        while (this.dataModel.play_data.length > 0) {
+            this.dataModel.play_data.pop();
+        }
         this.dataModel.is_data_replay = false;
         this.dataModel.groundtruth.x = -1;
         this.dataModel.groundtruth.y = -1;
@@ -337,13 +358,30 @@ var AppComponent = /** @class */ (function () {
         console.log(cur_record);
         this.dataModel.current_play_index += 1;
         this.sock.update_rssi(cur_record.rssi);
-        cur_record.rssi.forEach(function (v, i) { return _this.dataModel.dists[i] = v; });
+        cur_record.rssi.forEach(function (v, i) { return _this.dataModel.rssi[i] = v; });
         this.dataModel.groundtruth.x = cur_record.groundtruth.x;
         this.dataModel.groundtruth.y = cur_record.groundtruth.y;
         this.dataModel.groundtruth.z = cur_record.groundtruth.z;
         var groundtruth_svg_coord = this.dataModel.xy_to_svg_xy(this.dataModel.groundtruth);
         this.dataModel.groundtruth_svg_coord.x = groundtruth_svg_coord.x;
         this.dataModel.groundtruth_svg_coord.y = groundtruth_svg_coord.y;
+        this.dataModel.rssi.forEach(function (entry, i) {
+            if (entry >= 0) {
+                _this.dataModel.rssi_color_index[i] = 0;
+            }
+            else {
+                var num = entry + 90;
+                if (num <= 0) {
+                    _this.dataModel.rssi_color_index[i] = 1;
+                }
+                else {
+                    _this.dataModel.rssi_color_index[i] = Math.ceil(num / 10) + 1;
+                }
+                if (_this.dataModel.rssi_color_index[i] >= 6) {
+                    _this.dataModel.rssi_color_index[i] = 6;
+                }
+            }
+        });
         if (this.dataModel.current_play_index === this.dataModel.play_data.length) {
             this.dataModel.is_data_replay = false;
             this.dataModel.current_play_index = 0;
@@ -353,6 +391,7 @@ var AppComponent = /** @class */ (function () {
             this.dataModel.groundtruth.z = -1;
             this.dataModel.groundtruth_svg_coord.x = -1;
             this.dataModel.groundtruth_svg_coord.y = -1;
+            this.dataModel.rssi.forEach(function (v, i) { return _this.dataModel.rssi[i] = 0; });
         }
     };
     AppComponent.prototype.play_recorded = function () {
