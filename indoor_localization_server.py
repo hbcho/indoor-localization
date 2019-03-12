@@ -17,7 +17,7 @@ socketio = SocketIO(app)
 port_num = 8090
 
 # TODO: Change path_to_crowd_sourced_data to your actual file location
-path_to_crowd_sourced_data = ''
+path_to_crowd_sourced_data = 'crowd_sourced_data.csv'
 
 @app.route('/')
 def index():

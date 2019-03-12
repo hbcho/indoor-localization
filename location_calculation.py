@@ -17,11 +17,14 @@ def initialize_knn_model(path_to_crowd_sourced_data):
     Arguments:
         path_to_crowd_sourced_data {String} -- Path to crowd source data
     '''
+    global knn_model_x
+    global knn_model_y
+    global knn_model_z
     if len(path_to_crowd_sourced_data) == 0:
         print('Please provide path_to_crowd_sourced_data in indoor_localization_server.py')
         return
     try:
-        crowd_sourced_data = genfromtxt(path_to_crowd_sourced_data, delimiter=',')
+        crowd_sourced_data = genfromtxt(path_to_crowd_sourced_data, delimiter=',', dtype="S23, f, f, f, f, f, f, f, f, f, f, f", autostrip=True)
         try:
             processed_data = preprocess_data_for_knn(crowd_sourced_data)
             knn_model_x, knn_model_y, knn_model_z = build_knn_model(processed_data)
@@ -57,16 +60,14 @@ def receive_and_process_live_data(rssi_data):
         handle it?
     '''
 
-    crowd_sourced_data = None
-    knn_model_x = None
-    knn_model_y = None
-    knn_model_z = None
+    # crowd_sourced_data = None
+    # knn_model_x = None
+    # knn_model_y = None
+    # knn_model_z = None
     print('\nreceive rssi data {0}'.format(rssi_data))
     ''' The code below maintains rssi_data_buffer, a list that contains
         a list of most recent rssi reading.
     '''
-    data_buffer_size = 5
-    rssi_data_buffer = []
 
     rssi_data_buffer.append(rssi_data)
     if len(rssi_data_buffer) <= data_buffer_size:
@@ -205,20 +206,10 @@ def rssi_to_dist(proccessed_live_rssi_data):
     '''
     # TODO: implement the algorithm from the link above
     txPower = -54 # According to the spec of the beacon
-    returnList = []
-    for i in range(len(proccessed_live_rssi_data)):
-        curr = proccessed_live_rssi_data[i]
-        if curr == 0:
-            returnList.append(-1.0)
-        else:
-            ratio = curr * 1.0 / txPower
-            if ratio < 1.0:
-                returnList.append(math.pow(ratio,10))
-            else:
-                returnList.append((0.89976) * math.pow(ratio,7.7095) + 0.111)
 
     # return dist_to_beacons
-    return returnList
+    raise NotImplementedError
+
 
 def perform_trilateration_with_live_data(distances):
     '''Perform trilateration calculation
