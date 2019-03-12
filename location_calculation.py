@@ -132,7 +132,20 @@ def preprocess_data_for_knn(crowd_sourced_data):
     Arguments:
         crowd_sourced_data {[type]} -- [description]
     '''
-    raise NotImplementedError
+    new_arr = []
+    for data in crowd_sourced_data:
+        if 0 in data:
+            new_tup = ()
+            for item in data:
+                if item == 0:
+                    new_tup += (95,)
+                else:
+                    new_tup += (item,)
+            new_arr.append(new_tup)
+        else:
+            new_arr.append(data)
+            
+    return new_arr
 
 def build_knn_model(processed_data):
     '''build knn regression model for location
@@ -257,3 +270,6 @@ def perform_trilateration_with_live_data(distances):
         print(traceback.print_exc())
     # return x, y, z
     raise NotImplementedError
+
+if __name__ == "__main__":
+    initialize_knn_model('./crowd_sourced_data.csv')
