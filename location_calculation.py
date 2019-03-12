@@ -172,17 +172,30 @@ def build_knn_model(processed_data):
     knn_z = KNeighborsRegressor(n_neighbors=5)
 
     # TODO: How do you extract the information you need from processed data
-    rssi_data = None
-    x_data = None
-    y_data = None
-    z_data = None
+    rssi_data = []
+    x_data = []
+    y_data = []
+    z_data = []
+
+    for data in processed_data:
+        alist = []
+        for i in range(len(data)):
+            if i != 0:
+                if i == len(data) - 3:
+                    x_data.append(data[i])
+                elif i == len(data) - 2:
+                    y_data.append(data[i])
+                elif i == len(data) - 1:
+                    z_data.append(data[i])
+                else:
+                    alist.append(data[i])
+        rssi_data.append(alist)
 
     knn_x.fit(rssi_data, x_data)
     knn_y.fit(rssi_data, y_data)
     knn_z.fit(rssi_data, z_data)
-
-    # return knn_x, knn_y, knn_z
-    raise NotImplementedError
+    
+    return knn_x, knn_y, knn_z
 
 def perform_knn_with_live_data(proccessed_live_rssi_data):
     ''' perform regression using the knn model you built:
