@@ -285,7 +285,12 @@ def perform_trilateration_with_live_data(distances):
     # sum of squared error as the score you want to minimize
 
     def objective_function(xyz_guess, xyzd):
-        raise NotImplementedError
+        for i in range(len(xyzd[0])):
+            x = (xyz_guess[0] - xyzd[0][i]) ** 2
+            y = (xyz_guess[1] - xyzd[1][i]) ** 2
+            z = (xyz_guess[2] - xyzd[2][i]) ** 2
+            val = xyzd[3][i] / 10.0 * ((x + y + z) ** 0.5 - xyzd[3][i]) ** 2
+            return val
 
     try:
         x, y, z = minimize(objective_function, initial_guess, [x_i, y_i, z_i, d_i]).x
@@ -295,8 +300,7 @@ def perform_trilateration_with_live_data(distances):
         print('[perform_trilateration_with_live_data] An error occured when minimize')
         print(e.__doc__)
         print(traceback.print_exc())
-    # return x, y, z
-    raise NotImplementedError
+    return x, y, z
 
 if __name__ == "__main__":
     rssi_data = initialize_knn_model('./crowd_sourced_data.csv')
