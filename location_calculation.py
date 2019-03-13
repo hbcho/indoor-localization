@@ -64,11 +64,10 @@ def receive_and_process_live_data(rssi_data):
     # knn_model_x = None
     # knn_model_y = None
     # knn_model_z = None
-    print('\nreceive rssi data {0}'.format(rssi_data))
+    # print('\nreceive rssi data {0}'.format(rssi_data))
     ''' The code below maintains rssi_data_buffer, a list that contains
         a list of most recent rssi reading.
     '''
-
     rssi_data_buffer.append(rssi_data)
     if len(rssi_data_buffer) <= data_buffer_size:
         pass
@@ -211,8 +210,10 @@ def perform_knn_with_live_data(proccessed_live_rssi_data):
     # knn_model_x
     # knn_model_y
     # knn_model_z
-    # return x, y, z
-    raise NotImplementedError
+    x = knn_model_x.predict(proccessed_live_rssi_data)
+    y = knn_model_y.predict(proccessed_live_rssi_data)
+    z = knn_model_z.predict(proccessed_live_rssi_data)
+    return x, y, z
 
 
 def rssi_to_dist(proccessed_live_rssi_data):
@@ -246,7 +247,7 @@ def rssi_to_dist(proccessed_live_rssi_data):
 
     # return dist_to_beacons
     return dist_to_beacons_array
-    raise NotImplementedError
+    # raise NotImplementedError
 
 
 def perform_trilateration_with_live_data(distances):
@@ -285,4 +286,5 @@ def perform_trilateration_with_live_data(distances):
     raise NotImplementedError
 
 if __name__ == "__main__":
-    initialize_knn_model('./crowd_sourced_data.csv')
+    rssi_data = initialize_knn_model('./crowd_sourced_data.csv')
+    # receive_and_process_live_data(rssi_data)
