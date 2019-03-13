@@ -75,7 +75,20 @@ def receive_and_process_live_data(rssi_data):
         rssi_data_buffer.pop(0)
 
     #TODO: Obtain a single value for each beacon from the rssi_data_buffer
-    processed_rssi = None
+    processed_rssi = []
+    totals = [0, 0, 0, 0, 0, 0, 0, 0]
+    counts = [0, 0, 0, 0, 0, 0, 0, 0]
+    for i in range(len(rssi_data)):
+        for each in rssi_data_buffer:
+            if each[i] != 0:
+                counts[i] += 1
+                totals[i] += each[i]
+    for i in range(len(totals)):
+        if counts[i] is 0:
+            processed_rssi.append(0)
+        else:
+            processed_rssi.append(int(float(totals[i]) / float(counts[i])))
+    print('\nprocessed rssi data {0}'.format(processed_rssi))
 
     knn_location_x = -1
     knn_location_y = -1
