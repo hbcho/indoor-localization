@@ -63,7 +63,7 @@ if __name__ == '__main__':
         ble_scan_p.start()
 
 
-    socketio.run(app, host='localhost', port=port_num, debug = False)
+    socketio.run(app, host='127.0.0.1', port=port_num, debug = False)
 
 
 
