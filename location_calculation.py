@@ -95,6 +95,7 @@ def receive_and_process_live_data(rssi_data):
     knn_location_z = -1
     try:
         knn_location_x, knn_location_y, knn_location_z = perform_knn_with_live_data(processed_rssi)
+        print(knn_location_x, knn_location_y, knn_location_z)
         # Send to node.js server, which will relay the message the visualization tool
         # s.send(json.dumps({'key':'knn_location', 'x':knn_location_x, 'y':knn_location_y, 'z':knn_location_z}) + '\n')
     except NotImplementedError:
@@ -223,10 +224,11 @@ def perform_knn_with_live_data(proccessed_live_rssi_data):
     # knn_model_x
     # knn_model_y
     # knn_model_z
-    x = knn_model_x.predict(proccessed_live_rssi_data)
-    y = knn_model_y.predict(proccessed_live_rssi_data)
-    z = knn_model_z.predict(proccessed_live_rssi_data)
-    return x, y, z
+    x = knn_model_x.predict([proccessed_live_rssi_data])
+    y = knn_model_y.predict([proccessed_live_rssi_data])
+    z = knn_model_z.predict([proccessed_live_rssi_data])
+    print(x, y, z)
+    return float(x[0]), float(y[0]), float(z[0])
 
 
 def rssi_to_dist(proccessed_live_rssi_data):

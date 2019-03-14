@@ -9,6 +9,7 @@ from location_calculation import receive_and_process_live_data, initialize_knn_m
 from multiprocessing import Process
 import subprocess
 from subprocess import Popen, PIPE
+import json
 
 # static_folder = '../indoor-localisation-visualization/dist/indoor-localisation-visualization'
 # static_folder = './static'
@@ -44,7 +45,8 @@ def disconnect():
 @socketio.on('rssi_update', namespace='/sock')
 def on_rssi_update(rssi_data):
     knn_xyz, dists, tri_xyz = receive_and_process_live_data(rssi_data)
-    print('fingerprintting: {0} distances: {1} trilateration: {2}'.format(knn_xyz, dists, tri_xyz))
+    # print('fingerprintting: {0} distances: {1} trilateration: {2}'.format(knn_xyz, dists, tri_xyz))
+    print(json.dumps({'knn': {'x':knn_xyz[0], 'y':knn_xyz[1], 'z':knn_xyz[2]}, 'dists': dists, 'trilateration': {'x':tri_xyz[0], 'y':tri_xyz[1], 'z':tri_xyz[2]}}))
     emit('location', {'knn': {'x':knn_xyz[0], 'y':knn_xyz[1], 'z':knn_xyz[2]}, 'dists': dists, 'trilateration': {'x':tri_xyz[0], 'y':tri_xyz[1], 'z':tri_xyz[2]}})
     socketio.sleep(0)
 
